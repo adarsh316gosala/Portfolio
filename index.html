@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Adarsh G. | SCM Engineer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7fb;
+    color: #25364a;
+    line-height: 1.7;
+}
+
+/* NAVBAR */
+header {
+    background: #10243b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #37b9ee;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #37b9ee;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    min-height: 620px;
+    background: linear-gradient(120deg, #10243b, #15517a);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 70px 8%;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    color: #42c3f4;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    margin: 15px 0;
+}
+
+.hero h1 span {
+    color: #42c3f4;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #d2e1ee;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #168fc5;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: .3s;
+    border: 1px solid #168fc5;
+}
+
+.btn:hover {
+    background: #0874a5;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: #42c3f4;
+}
+
+.hero-box {
+    max-width: 330px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.2);
+    text-align: center;
+}
+
+.hero-box .icon {
+    font-size: 75px;
+}
+
+.hero-box h3 {
+    margin: 15px 0;
+}
+
+/* COMMON SECTIONS */
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    color: #12304c;
+    margin-bottom: 40px;
+}
+
+.dark {
+    background: #10243b;
+    color: white;
+}
+
+.dark .section-title {
+    color: white;
+}
+
+/* ABOUT */
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 18px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.stats h3 {
+    color: #168fc5;
+    font-size: 36px;
+}
+
+/* SKILLS */
+.skills-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 22px;
+}
+
+.skill-card {
+    background: white;
+    color: #25364a;
+    padding: 28px;
+    text-align: center;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+.skill-card .icon {
+    font-size: 40px;
+}
+
+.skill-card h3 {
+    color: #15517a;
+    margin: 12px 0;
+}
+
+.skill-card p {
+    color: #68788b;
+    font-size: 13px;
+}
+
+/* PROJECTS */
+.projects-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: white;
+    padding: 30px;
+    border-radius: 13px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+}
+
+.project-icon {
+    font-size: 42px;
+}
+
+.project-card h3 {
+    margin: 15px 0;
+    color: #123b5a;
+}
+
+.project-card p {
+    color: #68788b;
+    font-size: 14px;
+}
+
+.project-card span {
+    display: inline-block;
+    background: #e3f4fc;
+    color: #0874a5;
+    padding: 6px 12px;
+    margin-top: 18px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* COMPETENCIES */
+.competencies {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.competency {
+    padding: 17px;
+    border: 1px solid #38546d;
+    background: #193550;
+    border-radius: 8px;
+}
+
+/* EDUCATION */
+.education-card {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #1a3855;
+    border-radius: 12px;
+}
+
+.education-icon {
+    font-size: 50px;
+}
+
+.education-card p {
+    color: #c5d8e9;
+}
+
+/* CONTACT */
+.contact-card {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.07);
+}
+
+.contact-card p {
+    margin: 15px 0;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a {
+    color: #087eaf;
+    text-decoration: none;
+}
+
+.contact-card .btn {
+    color: white;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: #091827;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #10243b;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 65px 6%;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-box {
+        width: 100%;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .stats {
+        gap: 25px;
+    }
+
+    .education-card {
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+<nav>
+    <a href="#home" class="logo">ADARSH<span>.</span></a>
+
+    <button class="menu-btn" id="menuBtn"
+    aria-label="Toggle menu">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <div class="tag">SUPPLY CHAIN PROFESSIONAL</div>
+
+        <h1>Hi, I'm <span>Adarsh G.</span></h1>
+
+        <h2>SCM Engineer</h2>
+
+        <p>
+        Optimizing supply chain operations through SAP,
+        data analytics, inventory management and
+        operational excellence.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn">View My Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+    </div>
+
+    <div class="hero-box">
+        <div class="icon">📦</div>
+        <h3>Supply Chain Management</h3>
+        <p>SAP MM | SAP SCM | Power BI | Excel | SQL</p>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-content">
+
+        <p>
+        I am Adarsh G., a B.Tech Mechanical Engineering
+        graduate with 1–2 years of experience in the
+        Supply Chain Management domain.
+        </p>
+
+        <p>
+        I have technical knowledge of SAP MM, SAP SCM,
+        Advanced Excel, Power BI and SQL. I am passionate
+        about procurement, inventory management,
+        material planning and supply chain analytics.
+        </p>
+
+        <div class="stats">
+            <div>
+                <h3>1–2</h3>
+                <p>Years Experience</p>
+            </div>
+
+            <div>
+                <h3>5</h3>
+                <p>Technical Skills</p>
+            </div>
+
+            <div>
+                <h3>3</h3>
+                <p>Sample Projects</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="dark" id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="icon">📊</div>
+            <h3>Advanced Excel</h3>
+            <p>Data analysis, Pivot Tables, formulas and reporting.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="icon">📈</div>
+            <h3>Power BI</h3>
+            <p>Interactive dashboards, data visualization and KPIs.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="icon">⚙️</div>
+            <h3>SAP MM</h3>
+            <p>Materials management and procurement processes.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="icon">🚚</div>
+            <h3>SAP SCM</h3>
+            <p>Supply chain management and operations.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="icon">💻</div>
+            <h3>SQL</h3>
+            <p>Database queries and data analysis.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CORE COMPETENCIES -->
+<section class="dark" id="competencies">
+
+    <h2 class="section-title">Core Competencies</h2>
+
+    <div class="competencies">
+        <div class="competency">✓ Procurement Management</div>
+        <div class="competency">✓ Inventory Management</div>
+        <div class="competency">✓ Material Planning</div>
+        <div class="competency">✓ Supply Chain Operations</div>
+        <div class="competency">✓ Data Analysis & Reporting</div>
+        <div class="competency">✓ Vendor Performance Analysis</div>
+        <div class="competency">✓ ERP Business Processes</div>
+        <div class="competency">✓ Supply Chain KPI Monitoring</div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+            <div class="project-icon">📦</div>
+            <h3>Inventory Management Dashboard</h3>
+            <p>
+            Created a sample inventory dashboard to monitor
+            stock levels, inventory movements and
+            inventory performance indicators.
+            </p>
+            <span>Power BI | Advanced Excel</span>
+        </div>
+
+        <div class="project-card">
+            <div class="project-icon">🛒</div>
+            <h3>Procurement Data Analysis</h3>
+            <p>
+            Designed a sample procurement analysis covering
+            purchase orders, purchasing trends and
+            vendor performance.
+            </p>
+            <span>SAP MM | SQL | Excel</span>
+        </div>
+
+        <div class="project-card">
+            <div class="project-icon">🚛</div>
+            <h3>Supply Chain Performance Dashboard</h3>
+            <p>
+            Developed a sample dashboard concept to monitor
+            delivery performance, operational KPIs
+            and supply chain reporting.
+            </p>
+            <span>Power BI | SQL</span>
+        </div>
+
+    </div>
+
+    <p style="text-align:center;margin-top:25px;font-size:12px;color:#718096">
+    Note: These are sample project concepts, not verified completed work.
+    </p>
+</section>
+
+<!-- EDUCATION -->
+<section class="dark" id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-card">
+        <div class="education-icon">🎓</div>
+
+        <div>
+            <h3>Bachelor of Technology</h3>
+            <p>Mechanical Engineering</p>
+            <p>Engineering Graduate</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-card">
+
+        <p><strong>Name:</strong> Adarsh G.</p>
+
+        <p>
+        <strong>Email:</strong>
+        <a href="mailto:adarshgosala1@gmail.com">
+        adarshgosala1@gmail.com
+        </a>
+        </p>
+
+        <p><strong>Location:</strong> Bengaluru, India</p>
+
+        <p><strong>LinkedIn:</strong> Add your profile URL</p>
+
+        <a href="mailto:adarshgosala1@gmail.com" class="btn">
+        Send Me an Email
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>
+    © <span id="year"></span> Adarsh G. |
+    SCM Engineer Portfolio
+    </p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+    });
+});
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
+  
